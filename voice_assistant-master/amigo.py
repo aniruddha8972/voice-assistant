@@ -1,9 +1,12 @@
+from re import search
 import pyttsx3
 import speech_recognition as sr
 import wikipedia
 import webbrowser
 import os
-
+import pywhatkit
+import googlescrap
+import google
 # init pyttsx
 engine = pyttsx3.init("sapi5")
 voices = engine.getProperty("voices")
@@ -46,7 +49,7 @@ if __name__ == '__main__':
             speak("According to wikipedia")
             speak(results)
         elif 'who are you' in query:
-            speak("I am ai Assistant developed by Ani")
+            speak("I am  an ai Assistant developed by Ani")
         elif 'open youtube' in query:
             speak("opening youtube")
             webbrowser.open("https://www.youtube.com/")
@@ -85,5 +88,20 @@ if __name__ == '__main__':
         elif 'local disk e' in query:
             speak("opening local disk E")
             webbrowser.open("E://")
+        elif 'tell me ' in query:
+            import wikipedia as googlescrap
+            speak("Searching in google ...")
+            query = query.replace("google", '')
+            speak("According to google")
+            pywhatkit.search(query)
+            
+            try:
+                results = googlescrap.summary(query,3)
+                speak(results)
+                
+            
+            except:
+                speak("No speakable data available")
+                
         elif 'exit' in query:
             exit(0)
