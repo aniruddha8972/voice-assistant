@@ -66,7 +66,7 @@ LinkedIn
 * Python 3 language
 * wikipedia library
 * pyttsx3 library
-* os library
 * speech_recognition library
 * webbrowser library
-
+*googlescrap library
+*google library
