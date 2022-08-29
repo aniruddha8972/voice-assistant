@@ -68,5 +68,5 @@ LinkedIn
 * pyttsx3 library
 * speech_recognition library
 * webbrowser library
-*googlescrap library
-*google library
+* googlescrap library
+* google library
